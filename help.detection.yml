@@ -1,0 +1,4 @@
+---
+class_name:     cat.rank.HelpDetector
+trigger_label:  data.cat
+label:          detection.help

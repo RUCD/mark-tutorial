@@ -1,0 +1,4 @@
+---
+class_name:     mark.detection.ReadWrite
+trigger_label:  data.http
+label:          detection.readwrite

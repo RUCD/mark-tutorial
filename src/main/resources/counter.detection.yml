@@ -1,0 +1,4 @@
+---
+class_name:     cat.rank.Counter
+trigger_label:  data.cat
+label:          detection.counter

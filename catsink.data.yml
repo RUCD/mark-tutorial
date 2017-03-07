@@ -1,0 +1,5 @@
+---
+class_name: cat.rank.Sink
+label:      data.cat.sink
+parameters: {
+}

@@ -1,0 +1,10 @@
+# A data agent that produces http entries
+# from a file
+#
+---
+class_name: netrank.FileSource
+label:      data.http
+parameters: {
+  file:     ./httpfile.data.txt,
+  speedup:  1
+}

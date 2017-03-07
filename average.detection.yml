@@ -1,0 +1,4 @@
+---
+class_name:     mark.detection.Average
+trigger_label:  detection
+label:          aggregate.average
