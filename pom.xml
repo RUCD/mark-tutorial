@@ -24,19 +24,19 @@
       <dependency>
           <groupId>info.debatty.mark</groupId>
           <artifactId>core</artifactId>
-          <version>0.0.7-SNAPSHOT</version>
+          <version>0.0.8</version>
           <scope>provided</scope>
       </dependency>
       <dependency>
           <groupId>info.debatty.mark</groupId>
           <artifactId>client</artifactId>
-          <version>0.0.7-SNAPSHOT</version>
+          <version>0.0.8</version>
           <scope>provided</scope>
       </dependency>
       <dependency>
           <groupId>info.debatty.mark</groupId>
           <artifactId>server</artifactId>
-          <version>0.0.7-SNAPSHOT</version>
+          <version>0.0.8</version>
           <scope>test</scope>
       </dependency>
   </dependencies>

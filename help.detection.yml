@@ -1,4 +1,4 @@
 ---
 class_name:     cat.rank.HelpDetector
-trigger_label:  data.cat
+trigger_label:  data.cat.sink
 label:          detection.help

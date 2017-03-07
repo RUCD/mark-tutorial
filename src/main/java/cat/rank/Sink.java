@@ -16,35 +16,27 @@ public class Sink implements DataAgentInterface {
             throws Throwable {
 
         ServerSocket serverSocket = new ServerSocket(1555);
-        serverSocket.setSoTimeout(10000);
 
-        while (!Thread.interrupted()) {
-            try {
-                Socket clientSocket = serverSocket.accept();
-                PrintWriter out = new PrintWriter(clientSocket.getOutputStream(), true);
+        Socket clientSocket = serverSocket.accept();
+        PrintWriter out = new PrintWriter(clientSocket.getOutputStream(), true);
+        out.println("Welcome to Cat Rank! Tell me what's wrong?");
 
-                out.println("Welcome to Cat Rank! Tell me what's wrong?");
+        BufferedReader in = new BufferedReader(
+            new InputStreamReader(clientSocket.getInputStream()));
 
-                BufferedReader in = new BufferedReader(
-                    new InputStreamReader(clientSocket.getInputStream()));
+        String inputLine;
+        while ((inputLine = in.readLine()) != null) {
+            String[] parts = inputLine.split(":");
+            Cat cat = new Cat();
+            cat.name = parts[0].trim();
 
-                String inputLine;
-                while ((inputLine = in.readLine()) != null) {
-                    String[] parts = inputLine.split(":");
-                    Cat cat = new Cat();
-                    cat.name = parts[0].trim();
+            RawData<Cat> data = new RawData<Cat>();
+            data.subject = cat;
+            data.data = parts[1].trim();
+            data.time = (int) (System.currentTimeMillis() / 1000);
+            data.label = "data.cat.server";
 
-                    RawData<Cat> data = new RawData<Cat>();
-                    data.subject = cat;
-                    data.data = parts[1].trim();
-                    data.time = (int) (System.currentTimeMillis() / 1000);
-                    data.label = "data.cat.server";
-
-                    datastore.addRawData(data);
-                }
-            } catch (java.net.SocketTimeoutException timeout) {
-
-            }
+            datastore.addRawData(data);
         }
     }
 }

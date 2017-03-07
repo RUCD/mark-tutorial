@@ -1,4 +1,4 @@
 ---
 class_name:     cat.rank.Counter
-trigger_label:  data.cat
+trigger_label:  data.cat.sink
 label:          detection.counter
